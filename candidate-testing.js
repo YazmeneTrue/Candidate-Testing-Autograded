@@ -25,9 +25,9 @@ candidateName = input.question(" Name: ");
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-  /*candidateAnswer = input.question(question);*/
-for (let i = 0; i < question.length; i++){
-  candidateAnswers.push(input.question(questions[i]));
+ // candidateAnswer = input.question(question);
+for (let i = 0; i < questions.length; i++){
+  candidateAnswers.push(input.question(questions[i]));  // we use push to add on to the end of the empty array//
 }
 
 }
@@ -35,7 +35,17 @@ for (let i = 0; i < question.length; i++){
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
+// if (candidateAnswer.toUpperCase() === correctAnswer.toUpperCase()){
+ // console.log("Correct!");
+//} else (console.log("Incorrect. Try Again"));
 
+for (let i = 0; i < questions.length; i++){
+  if (candidateAnswers[i].toUpperCase() === correctAnswers[i].toUpperCase()){
+    console.log(`Your Asnwer: ${candidateAnswers[i]}
+    Correct!`);
+  } else console.log(`Your Answer: ${candidateAnswers[i]}
+  Incorrect. The correct answer is ${correctAnswers[i]}`);
+}
 
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
