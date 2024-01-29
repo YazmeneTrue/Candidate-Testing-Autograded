@@ -38,21 +38,35 @@ function gradeQuiz(candidateAnswers) {
 // if (candidateAnswer.toUpperCase() === correctAnswer.toUpperCase()){
  // console.log("Correct!");
 //} else (console.log("Incorrect. Try Again"));
+let numOfCorrect = 0;
 
 for (let i = 0; i < questions.length; i++){
   if (candidateAnswers[i].toUpperCase() === correctAnswers[i].toUpperCase()){
     console.log(`Your Answer: ${candidateAnswers[i]}
-    Correct!`);
+    Correct!`); numOfCorrect ++ ;
   } else console.log(`Your Answer: ${candidateAnswers[i]}
-  Incorrect. The correct answer is ${correctAnswers[i]}`);
+  Wrong. Correct Answer: ${correctAnswers[i]}`);
 }
+let grade = (numOfCorrect/ questions.length)* 100 
+console.log(`GRADE:${grade} %`);
+
+if( grade >= 80){
+  console.log ('PASSED!');
+}else console.log('FAILED!');
 
 
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
+
+
+
+
+  
+
+   //TODO 3.2 use this variable to calculate the candidates score.
 
 
   return grade;
 }
+;
 
 function runProgram() {
   askForName();
